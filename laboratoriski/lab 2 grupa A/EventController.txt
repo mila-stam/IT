@@ -1,0 +1,83 @@
+using Lab2.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Lab2.Controllers
+{
+    public class EventController : Controller
+    {
+        private static List<EventModel> eventsList = new List<EventModel>()
+        {
+            new EventModel(){ Name = "Pivolend", Location = "Ploshtad", Id=1},
+            new EventModel(){ Name = "Vinoskop", Location = "Boris Trajkovski", Id=2}
+        };
+        // GET: Event
+        public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult ShowAllEvents()
+        {
+            return View(eventsList);
+        }
+        public ActionResult NewEvent()
+        {
+            EventModel model = new EventModel();
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResuvlt AddEvent(EventModel model)
+        {
+            if (!ModelState.IsValid) {
+                return View("NewEvent", model);
+            }
+            EventModel newEvent = model;
+            if(eventsList.Count == 0)
+            {
+                newEvent.Id = 1;
+            }
+            else
+            {
+                newEvent.Id = eventsList.Max(e => e.Id) + 1;
+            }
+            eventsList.Add(newEvent);
+           return View("ShowEvent", newEvent);
+        }
+        public EventModel getEventWithId(int id)
+        {
+            return eventsList.Find(e => e.Id == id);
+        }
+        public ActionResult EditEvent(int id)
+        {
+            EventModel model = getEventWithId(id);
+            if(model == null)
+            {
+                return HttpNotFound();
+            }
+            return View(model); 
+        }
+        [HttpPost]
+        public ActionResult EditEventInList(EventModel model) {
+            if(!ModelState.IsValid)
+            {
+                return View("EditEvent", model);
+            }
+            EventModel e = getEventWithId(model.Id);
+            if(e != null)
+            {
+                e.Name = model.Name;
+                e.Location = model.Location;
+            }
+            return RedirectToAction("ShowAllEvents");
+        }
+
+        public ActionResult DeleteEvent(int id)
+        {
+            eventsList.Remove(getEventWithId(id));
+            return RedirectToAction("ShowAllEvents");
+        }
+    }
+}

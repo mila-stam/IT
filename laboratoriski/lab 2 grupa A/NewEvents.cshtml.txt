@@ -1,0 +1,23 @@
+@model Lab2.Models.EventModel
+@{
+    ViewBag.Title = "NewEvent";
+}
+
+<h2>New Event</h2>
+
+@using (Html.BeginForm("AddEvent", "Event"))
+{
+    <div>
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Location)
+        @Html.TextBoxFor(m => m.Location, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Location)
+    </div>
+
+    <button type="submit" class="btn">Save</button>
+}

@@ -1,0 +1,26 @@
+@model List<Lab2.Models.EventModel>
+@{
+    ViewBag.Title = "ShowAllEvents";
+}
+<style>
+    td{
+        border: solid black 1px;
+        padding: 5px;
+    }
+</style>
+<h2>All Events</h2>
+
+<table>
+    @{
+        int i = 0;
+        foreach (var ev in Model)
+        {
+            <tr>
+                <td>@ev.Name @ev.Id</td>
+                <td>@Html.ActionLink("Edit", "EditEvent", new {id = ev.Id})</td>
+                <td>@Html.ActionLink("Delete", "DeleteEvent", new {id = ev.Id})</td>
+            </tr>
+            i++;
+        }
+    }
+</table>
