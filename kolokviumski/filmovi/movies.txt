@@ -1,0 +1,78 @@
+ASPX:
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div>
+        <asp:Label ID="lblCategory" runat="server" Text=" "></asp:Label>
+    </div>
+
+    <div>
+        <b>Naslov</b>
+    </div>
+
+    <div>
+        <asp:ListBox ID="lbMovies" runat="server" OnSelectedIndexChanged="lbMovies_SelectedIndexChanged" AutoPostBack="True"></asp:ListBox>
+    </div>
+
+    <div>
+        Total:
+        <asp:Label ID="lbltotal" runat="server" Text=""></asp:Label>
+    </div>
+
+    <div>
+        <asp:Button ID="back" runat="server" Text="Button" OnClick="back_click" />
+    </div>
+</asp:Content>
+
+
+ASPX.CS:
+namespace WebApplication1
+{
+    public partial class Movies : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                lblCategory.Text = Request.QueryString.Get("name");
+
+                string[] com_movies = Session["comedy"] as string[];
+                string[] acc_movies = Session["action"] as string[];
+                string[] scifi_movies = Session["science_fiction"] as string[];
+
+                switch (Convert.ToInt32(Request.QueryString.Get("catId")))
+                    {
+                        case 0:
+                            lbMovies.DataSource = com_movies;
+                            break;
+                        case 1:
+                            lbMovies.DataSource = acc_movies;
+                            break;
+                        case 2:
+                            lbMovies.DataSource = scifi_movies;
+                            break;
+                    }
+                    lbMovies.DataBind();
+                
+
+            }
+
+        }
+
+        protected void lbMovies_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Session["total"] == null)
+            {
+                Session["total"] = 1;
+            }
+            else
+            {
+                Session["total"] = (int)Session["total"] + 1;
+            }
+            lbltotal.Text = Session["total"].ToString();
+        }
+
+        protected void back_click(object sender, EventArgs e)
+        {
+            Response.Redirect("Kategorii.aspx");
+        }
+    }
+}

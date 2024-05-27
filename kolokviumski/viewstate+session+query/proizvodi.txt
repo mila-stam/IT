@@ -1,0 +1,112 @@
+ASPX:
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div>
+        <asp:Label ID="lblKategorija" runat="server" Text=" "></asp:Label>
+    </div>
+    <div>
+        <asp:ListBox ID="lbNaslovi" runat="server" AutoPostBack="True" OnSelectedIndexChanged="lbNaslovi_selectedIndex"></asp:ListBox>
+    </div>
+
+    <div>
+        <asp:ListBox ID="lbCeni" runat="server" AutoPostBack="True"></asp:ListBox>
+    </div>
+
+    <asp:Button ID="btnDodadi" runat="server" Text="Dodadi" OnClick="btnDodadi_Click" />
+
+    <div>
+        <asp:ListBox ID="lbKorpa" runat="server"></asp:ListBox>
+
+    </div>
+    <div>
+        Total selektirani:
+        <asp:Label ID="lblSelected" runat="server" Text=" "></asp:Label>
+    </div>
+
+    <div>
+        Vkupen total:
+        <asp:Label ID="lblVkupno" runat="server" Text=" "></asp:Label>
+    </div>
+
+
+    <div>
+        <asp:Button ID="btnBack" runat="server" Text="nazad" OnClick="btnBack_Click" />
+    </div>
+</asp:Content>
+
+
+ASPX.CS:
+namespace WebApplication1
+{
+    public partial class proizvodi : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                lblKategorija.Text = Request.QueryString["name"];
+
+                string[] naslovi = Session[Request.QueryString["name"]] as string[];
+                string[] ceni = Session[Request.QueryString["name"] + "1"] as string[];
+
+                lbNaslovi.DataSource = naslovi;
+                lbNaslovi.DataBind();
+
+                lbCeni.DataSource = ceni;
+                lbCeni.DataBind();
+
+            }
+        }
+
+        protected void btnDodadi_Click(object sender, EventArgs e)
+        {
+            ArrayList list;
+            if (Session["korpa"] == null)   //proveruva dali postoi sesija korpa
+            {
+                list = new ArrayList();     //ako ne postoi kreira nova lista
+            }
+            else
+            {
+                list = (ArrayList)Session["korpa"];   //ako sesijata postoi podatocite od taa sesija gi smestuva vo lista
+            }
+            lbCeni.SelectedIndex = lbNaslovi.SelectedIndex;
+            list.Add(new ListItem(lbNaslovi.SelectedItem.Text, lbCeni.SelectedIndex.ToString()));   //vo listata se dodava novo selektiraniot element so vradnosta
+            lbKorpa.DataTextField = "Text";  //vo listBoxot Korpa kazhuvame deka Text poleto od ListItem treba da se prikazhuva
+            lbKorpa.DataValueField = "Value";  //a toa shto e vrednost na ListItem da se chuva kako value
+
+            lbKorpa.DataSource = list;    //se zemaat vrednostite od list
+            lbKorpa.DataBind();          //se stavaat vo list boxot korpa za da se prikazhuvaat
+
+            Session["korpa"] = list;    //novata lista so dodadeniot element se stava vo sessijata
+
+            if (Session["total"] == null)
+            {
+                Session["total"] = Convert.ToInt32(lbCeni.SelectedValue);
+            }
+            else
+            {
+                Session["total"] = Convert.ToInt32(Session["total"]) + Convert.ToInt32(lbCeni.SelectedValue);
+            }
+            lblVkupno.Text = Session["total"].ToString();
+        }
+
+        protected void lbNaslovi_selectedIndex(object sender, EventArgs e)
+        {
+            if (ViewState["selected"] == null)
+            {
+                ViewState["selected"] = 1;
+            }
+            else
+            {
+                ViewState["selected"] = (int)ViewState["selected"] + 1;
+            }
+            lblSelected.Text = ViewState["selected"].ToString();
+
+            lbCeni.SelectedIndex = lbNaslovi.SelectedIndex;
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("katalog.aspx");
+        }
+    }
+}

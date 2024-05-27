@@ -1,0 +1,47 @@
+ASPX:
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="row">
+        <div>
+            <b>Kategorii</b>
+        </div>
+    </div>
+
+    <div class="row">
+        <div>
+            <asp:LinkButton ID="sl" runat="server" OnClick="sl_Click">Struchna literatura</asp:LinkButton>
+            <br />
+            <asp:LinkButton ID="bl" runat="server" OnClick="bl_Click">Beletristika</asp:LinkButton>
+            <br />
+            <asp:LinkButton ID="sf" runat="server" OnClick="sf_Click">Sci-Fi</asp:LinkButton>
+        </div>
+    </div>
+</asp:Content>
+
+ASPX.CS:
+namespace WebApplication1
+{
+    public partial class Contact : Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void sl_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Proizvodi.aspx?catid=0&name=Struchna+Literatura");
+        }
+
+        protected void bl_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Proizvodi.aspx?catid=1&name=Beletristika");
+
+        }
+
+        protected void sf_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Proizvodi.aspx?catid=2&name=Sci-Fi");
+
+        }
+    }
+}

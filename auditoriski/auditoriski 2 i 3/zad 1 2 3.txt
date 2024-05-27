@@ -1,0 +1,68 @@
+
+.ASPX
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="jumbotron">
+        <h1>Internet technology</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div class="m-3">
+                Изберете град:
+            <br />
+                <asp:ListBox ID="ListaGradovi" runat="server" SelectionMode="Single">
+                    <asp:ListItem Value="0">Скопје</asp:ListItem>
+                    <asp:ListItem Value="120">Прилеп</asp:ListItem>
+                    <asp:ListItem Value="45">Куманово</asp:ListItem>
+                </asp:ListBox>
+            </div>
+
+            <div class="m-3">
+                <asp:Button ID="PrikazhiGrad" runat="server" Text="Прикажи" OnClick="PrikazhiGrad_Click" />
+            </div>
+
+            <div class="m-3">
+                Селектираниот град е:
+                <asp:Label ID="SelektrianGrad" runat="server" Text="none"></asp:Label>
+            </div>
+            <div class="m-3">
+                Растојанието од Скопје е:
+                <asp:Label ID="Distanca" runat="server" Text="none"></asp:Label>
+            </div>
+        </div>
+    </div>
+
+</asp:Content>
+
+
+
+.ASPX.CS
+ public partial class zad_1_2_3 : System.Web.UI.Page
+ {
+     protected void Page_Load(object sender, EventArgs e)
+     {
+
+     }
+
+     protected void PrikazhiGrad_Click(object sender, EventArgs e)
+     {
+         ListItem selected = ListaGradovi.SelectedItem;
+         SelektrianGrad.Text = selected.Text;
+         Distanca.Text = selected.Value + " km";
+
+         /*
+          * ///////ZA SELEKTIRANJE POVEKJE GRADOVI///////////
+          * ListItemCollection items = ListaGradovi.Items;
+         SelektrianGrad.Text = " ";
+         Distanca.Text = " ";
+
+         foreach (ListItem item in items)
+         {
+             if (item.Selected)
+             {
+                 SelektrianGrad.Text += "<br/>" + item.Text;
+                 Distanca.Text += "<br/>" + item.Value + " km";
+             }
+         }*/
+     }
+ }

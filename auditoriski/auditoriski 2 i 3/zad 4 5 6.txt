@@ -1,0 +1,110 @@
+.ASPX
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="m-4">
+                Внесете име на валута:
+                <br />
+                <asp:TextBox ID="imeValuta" runat="server"></asp:TextBox>
+            </div>
+
+            <div class="m-4">
+                Внесете вредност на валута:
+                <br />
+                <asp:TextBox ID="vrednostValuta" runat="server"></asp:TextBox>
+            </div>
+
+            <div class="m-4">
+                <asp:Button ID="dadadi" runat="server" Text="додади" OnClick="dodadi_click" />
+                <asp:Button ID="izbrishi" runat="server" Text="избриши" OnClick="izbrishi_click" />
+            </div>
+
+            <hr />
+
+            <div>
+                <asp:RadioButtonList ID="listaValuti" runat="server" OnSelectedIndexChanged="listaValuti_indexChange" AutoPostBack="True"></asp:RadioButtonList>
+            </div>
+
+            <hr />
+
+            <div>
+                Вкупно валути: 
+                <asp:Label ID="total" runat="server" Text="0"></asp:Label>
+            </div>
+
+            <br />
+            <hr />
+
+            <div class="m-4">
+                Внесете вредност:
+                <asp:TextBox ID="konvertVrednost" runat="server"></asp:TextBox>
+            </div>
+            <div>
+                Претворена вредност:
+                <asp:Label ID="konvertirana" runat="server" Text=" "></asp:Label>
+            </div>
+
+            <br />
+            <hr />
+            <div>
+                Статус:
+                <asp:Label ID="status" runat="server" Text=" "></asp:Label>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+
+
+ASPX.CS
+public partial class zad_4_5_6 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        //if (!this.IsPostBack)
+        //{
+        //    List<ListItem> list = new List<ListItem>();
+
+        //    ListItem item1 = new ListItem("Евро", "61");
+        //    ListItem item2 = new ListItem("Долар", "55");
+
+        //    list.Add(item1);
+        //    list.Add(item2);
+
+        //    listaValuti.DataSource = list;
+        //    listaValuti.DataBind();
+        //}
+    }
+
+    protected void dodadi_click(object sender, EventArgs e)
+    {
+        status.Text = " ";
+        ListItem item = new ListItem(imeValuta.Text, vrednostValuta.Text);
+        listaValuti.Items.Add(item);
+
+        imeValuta.Text = " ";
+        vrednostValuta.Text = " ";
+
+        total.Text = listaValuti.Items.Count.ToString();
+    }
+
+    protected void izbrishi_click(object sender, EventArgs e)
+    {
+        status.Text = " ";
+        if (listaValuti.SelectedIndex != -1)
+        {
+            listaValuti.Items.Remove(listaValuti.SelectedItem);
+            total.Text = listaValuti.Items.Count.ToString();
+        }
+        else
+        {
+            status.Text = "Нема селектирана валута";
+        }
+    }
+
+    protected void listaValuti_indexChange(object sender, EventArgs e)
+    {
+        int value = Convert.ToInt32(listaValuti.SelectedValue);
+
+        konvertirana.Text = Convert.ToString(Convert.ToInt32(konvertVrednost.Text) * value);
+    }
+}

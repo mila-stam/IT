@@ -1,0 +1,53 @@
+.ASPX
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container">
+        <div class="row text-center">
+            <div>
+                <asp:Image ID="logo" runat="server" ImageUrl="~/logo_10.png" />
+            </div>
+            <div>
+                <asp:Label ID="lblProfesor" runat="server" Text=" "></asp:Label>
+            </div>
+
+            <div class="m-3">
+                <asp:ListBox ID="lbPredmeti" runat="server" OnSelectedIndexChanged="lbPredmeti_change" AutoPostBack="True">
+                    <asp:ListItem Value="Гоце Арменски">Интернет Технологии</asp:ListItem>
+                    <asp:ListItem Value="Стефан Андонов">Интернет</asp:ListItem>
+                    <asp:ListItem Value="Влатко Спасов">Дигитална Електроника</asp:ListItem>
+                </asp:ListBox>
+
+                <asp:ListBox ID="lbKrediti" runat="server">
+                    <asp:ListItem>6</asp:ListItem>
+                    <asp:ListItem>5.5</asp:ListItem>
+                    <asp:ListItem>5.5</asp:ListItem>
+                </asp:ListBox>
+            </div>
+
+            <div>
+                <asp:Button ID="button" runat="server" Text="Гласајте" OnClick="btn_click" />
+            </div>
+        </div>
+    </div>
+</asp:Content>
+
+
+.ASPX.CS
+public partial class lab1Glasaj : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btn_click(object sender, EventArgs e)
+    {
+        Response.Redirect("lab1UspeshnoGlasanje.aspx");
+    }
+
+    protected void lbPredmeti_change(object sender, EventArgs e)
+    {
+        ListItem selected = lbPredmeti.SelectedItem;
+
+        lblProfesor.Text = selected.Value.ToString();
+    }
+}

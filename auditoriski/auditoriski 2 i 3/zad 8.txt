@@ -1,0 +1,134 @@
+.ASPX
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <div class="m-4 ">
+                    Изберете боја за позадина
+                <br />
+                    <asp:DropDownList ID="background" runat="server"></asp:DropDownList>
+                </div>
+
+                <div class="m-4 ">
+                    Изберете фонт
+                <br />
+                    <asp:DropDownList ID="font" runat="server"></asp:DropDownList>
+                </div>
+
+                <div class="m-4 ">
+                    Изберете боја на фонт
+                <br />
+                    <asp:DropDownList ID="fontColor" runat="server"></asp:DropDownList>
+                </div>
+
+                <div class="m-4 ">
+                    Внесете големина на фонт
+                <br />
+                    <asp:TextBox ID="fontSize" runat="server"></asp:TextBox>pt
+                </div>
+
+                <div class="m-4 ">
+                    Тип на рамка
+                    <br />
+                    <%--                    <asp:RadioButton ID="borderType" runat="server" Text="Unbound" />--%>
+                    <asp:RadioButtonList ID="borderType" runat="server"></asp:RadioButtonList>
+                </div>
+
+
+                <div class="m-4 ">
+                    <asp:CheckBox ID="addImg" runat="server" Text="Додади слика" />
+                </div>
+
+                <div class="m-4 ">
+                    Внесете ја содржината на честитката
+                <br />
+                    <asp:TextBox ID="content" runat="server" TextMode="MultiLine"></asp:TextBox>
+                </div>
+
+
+                <div class="m-4">
+                    <asp:Button ID="create" runat="server" Text="креирај" OnClick="create_Click" />
+                </div>
+            </div>
+
+
+            <div class="col-5">
+                <asp:Panel ID="card" runat="server">
+                    <asp:Label ID="message" runat="server" Text="порака"></asp:Label>
+                    <asp:Image ID="img" runat="server" ImageUrl="~/sample.jpg" Visible="False" />
+                </asp:Panel>
+            </div>
+
+        </div>
+    </div>
+</asp:Content>
+
+
+
+.ASPX.CS
+public partial class zad_8 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if(!IsPostBack)
+        {
+            //se davaat vrednosti na dropdowns, checkboxes, radiobuttons...
+            background.Focus();
+
+            background.Items.Add("White");
+            background.Items.Add("Red");
+            background.Items.Add("Green");
+            background.Items.Add("Blue");
+            background.Items.Add("Yellow");
+
+            font.Items.Add("Times New Roman");
+            font.Items.Add("Arial");
+            font.Items.Add("Verdana");
+            font.Items.Add("Courier");
+
+            fontColor.Items.Add("White");
+            fontColor.Items.Add("Red");
+            fontColor.Items.Add("Green");
+            fontColor.Items.Add("Blue");
+            fontColor.Items.Add("Yellow");
+
+
+            borderType.Items.Add(new ListItem(BorderStyle.None.ToString(), ((int)BorderStyle.None).ToString()));
+            borderType.Items.Add(new ListItem(BorderStyle.Solid.ToString(), ((int)BorderStyle.Solid).ToString()));
+
+        }
+    }
+
+    protected void create_Click(object sender, EventArgs e)
+    {
+        message.Text = content.Text;  //tekstot od textboxot da se stavi kako poraka na chestitkata
+        message.Font.Name = font.SelectedItem.Text;  //selektiranoto ime na font da se stavi kako font na porakata
+
+        try
+        {
+            if(Convert.ToInt32(fontSize.Text) > 0)  //se proveruva dali goleminata na font e pogolema od nula (dali e int)
+            {
+                message.Font.Size = FontUnit.Point(Int32.Parse(fontSize.Text)); //ako e pogolema od 0 taa vrednost se parsira i se stava kako golemina na porakata
+            }
+        }
+        catch
+        {
+            Response.Write("Полето за големина мора да содржи int");   //se pechati poraka dokolku goleminata na fontot ne e soodvetna
+        }
+
+        message.ForeColor = Color.FromName(fontColor.SelectedItem.Text);    //izbranata boja na font se stava kako boja na porakata
+        card.BackColor = Color.FromName(background.SelectedItem.Text);     //izbranata boja na pozadina se stava kako pozadina na chestitkata
+
+        int value = Convert.ToInt32(borderType.SelectedValue);   //izbraniot tip na border se stava kako border na chestitkata
+        card.BorderStyle = (BorderStyle)value;                   //-//-
+        if (addImg.Checked)                     //ako checkboxot za dodavanje slika e izbran 
+        {
+            img.Visible = true;                 //slikata se prikazhuva
+        }
+        else
+        {
+            img.Visible = false;                //slikata ne se prikazhuva
+        }
+    }
+}

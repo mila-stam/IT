@@ -1,0 +1,102 @@
+.ASPX
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container" style="margin: 20px;">
+        <div class="row">
+            <div class="col-md-3">
+                <asp:TextBox ID="email" runat="server" Style="width: 100%"></asp:TextBox>
+            </div>
+            <div class="col-md-9 text-left">
+                <asp:RequiredFieldValidator
+                    class="text-danger"
+                    ID="requiredFieldEmail"
+                    runat="server"
+                    ControlToValidate="email"
+                    ErrorMessage="Required Field">
+                </asp:RequiredFieldValidator>
+
+                <asp:RegularExpressionValidator
+                    class="text-danger"
+                    ID="emailValidator"
+                    runat="server"
+                    ValidationExpression="\S+@\w+\.\w+"
+                    ControlToValidate="email"
+                    ErrorMessage="Invalid mail value">
+                </asp:RegularExpressionValidator>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-3">
+                <asp:TextBox ID="password" runat="server" Style="width: 100%"></asp:TextBox>
+            </div>
+            <div class="col-md-9 text-left">
+                <asp:RequiredFieldValidator
+                    class="text-danger"
+                    ID="requiredFieldPassward"
+                    runat="server"
+                    ControlToValidate="password"
+                    ErrorMessage="Required Field">
+                </asp:RequiredFieldValidator>
+
+                <asp:RegularExpressionValidator
+                    class="text-danger"
+                    ID="passwordValidator"
+                    runat="server"
+                    ValidationExpression=".{5,}"
+                    ControlToValidate="password"
+                    ErrorMessage="Invalid password">
+                </asp:RegularExpressionValidator>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-3">
+                <asp:TextBox ID="repeatPassword" runat="server" Style="width: 100%"></asp:TextBox>
+            </div>
+            <div class="col-md-9 text-left">
+                <asp:RequiredFieldValidator
+                    class="text-danger"
+                    ID="RequiredFieldPassword2"
+                    runat="server"
+                    ControlToValidate="repeatPassword"
+                    ErrorMessage="Required Field">
+                </asp:RequiredFieldValidator>
+
+
+                <asp:CompareValidator
+                    class="text-danger"
+                    ID="compareValidator"
+                    runat="server"
+                    ControlToValidate="repeatPassword"
+                    ControlToCompare="password"
+                    ErrorMessage="Password doesn't match">
+                </asp:CompareValidator>
+            </div>
+        </div>
+
+        <div class="row" style="margin-left: 0px; margin-top: 10px;">
+            <asp:Button ID="button" runat="server" Text="register" OnClick="button_click" />
+        </div>
+
+        <div class="row" style="margin-left: 0px; margin-top: 10px;">
+            <asp:Label ID="labelUsername" runat="server" Text=""></asp:Label>
+        </div>
+
+    </div>
+
+</asp:Content>
+
+
+.ASPX.CS
+public partial class zad1 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void button_click(object sender, EventArgs e)
+    {
+        labelUsername.Text= "Welcome " + email.Text; 
+    }
+}

@@ -1,0 +1,51 @@
+ASPX:
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div>
+        <h1>Proizvodi vo koshnichka</h1>
+    </div>
+
+    <div>
+        <asp:ListBox ID="korpa" runat="server"></asp:ListBox>
+    </div>
+
+    <div>
+        <asp:LinkButton ID="back" runat="server" OnClick="back_Click">Katalog</asp:LinkButton>
+    </div>
+
+    <div>
+        <asp:Button ID="kupi" runat="server" Text="Kupi" OnClick="kupi_Click" />
+    </div>
+</asp:Content>
+
+ASPX.CS:
+namespace WebApplication1
+{
+    public partial class _Default : Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            korpa.DataTextField = "Text";
+            korpa.DataValueField = "Value";
+            korpa.DataSource = (ArrayList)Session["cart"];
+            korpa.DataBind();
+            int totalValue = 0;
+
+            foreach(ListItem i in korpa.Items)
+            {
+                totalValue =+ Convert.ToInt32(i.Value);
+            }
+
+            kupi.Text = "Kupi ($ " + totalValue.ToString() + ")";  
+        }
+
+        protected void back_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Katalog.aspx");
+        }
+
+        protected void kupi_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

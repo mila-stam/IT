@@ -1,0 +1,83 @@
+ASPX:    
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+        <div>
+            <asp:Label ID="kategorii" runat="server" Text="Kategorii"></asp:Label>
+            <div>
+                <asp:LinkButton ID="cm" runat="server" OnClick="cm_click">Komedija</asp:LinkButton>
+            </div>
+            <div>
+                <asp:LinkButton ID="ac" runat="server" OnClick="ac_click">Akcija</asp:LinkButton>
+            </div>
+
+            <div>
+                <asp:LinkButton ID="sf" runat="server" OnClick="sf_click">Nauchna fantastika</asp:LinkButton>
+            </div>
+
+        
+        </div>
+    </asp:Content>
+
+ASPX.CS:
+namespace WebApplication1
+{
+    public partial class Katalog : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+
+        }
+
+        protected void cm_click(object sender, EventArgs e)
+        {
+            string[] com_movies =
+                {
+                "Kniga1",
+                "Kniga2",
+                "Kniga3",
+                "Kniga4",
+                "Kniga5",
+                "Kniga6",
+            };
+
+            Session["comedy"] = com_movies;
+            Response.Redirect("Movies.aspx?catId=0&name=Komedija");
+        }
+
+        protected void ac_click(object sender, EventArgs e)
+        {
+            string[] acc_movies =
+                {
+                "Kniga11",
+                "Kniga22",
+                "Kniga32",
+                "Kniga43",
+                "Kniga54",
+                "Kniga63",
+            };
+
+            Session["action"] = acc_movies;
+            Response.Redirect("Movies.aspx?catId=1&name=Akcija");
+
+        }
+
+        protected void sf_click(object sender, EventArgs e)
+        {
+            string[] sf_movies =
+                {
+                "Kniga1",
+                "Kniga2",
+                "Kniga3",
+                "Kniga4",
+                "Kniga5",
+                "Kniga6",
+            };
+
+            Session["science_fiction"] = sf_movies;
+            Response.Redirect("Movies.aspx?catId=2&name=Nauchna+fantastika");
+
+        }
+
+        
+    }
+}

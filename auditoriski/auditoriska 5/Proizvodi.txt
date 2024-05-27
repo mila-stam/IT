@@ -1,0 +1,175 @@
+ASPX:
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <asp:Label ID="naslov" runat="server" Text="(none)"></asp:Label>
+        </div>
+    </div>
+
+    <div class="row">
+            <b>Naslov</b>
+            <b>Cena</b>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-8">
+            <asp:ListBox ID="naslovi" runat="server" OnSelectedIndexChanged="naslovi_selectedIndexChange" AutoPostBack="True"></asp:ListBox>
+        </div>
+        <div class="col-xs-2">
+            <asp:ListBox ID="ceni" runat="server"></asp:ListBox>
+        </div>
+    </div>
+
+    <hr />
+
+    <div>
+        <asp:Button ID="dodadi" runat="server" Text="Dodadi" OnClick="dodadi_Click" />
+        Total: 
+        <asp:Label ID="total" runat="server" Text="0"></asp:Label>
+    </div>
+    <hr />
+    <div>
+        <asp:ListBox ID="korpa" runat="server"></asp:ListBox>
+        <asp:Button ID="kupi" runat="server" Text="Kupi" OnClick="kupi_Click" />
+    </div>
+</asp:Content>
+
+ASPX.CS:
+namespace WebApplication1
+{
+    public partial class About : Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!this.IsPostBack)
+            {
+                naslov.Text = Request.QueryString.Get("name");
+
+                string[] sl =
+                {
+                    "Kniga1",
+                    "Kniga2",
+                    "Kniga3",
+                    "Kniga4",
+                    "Kniga5",
+                    "Kniga6",
+                };
+
+                string[] sl_c =
+                {
+                    "10",
+                    "20",
+                    "30",
+                    "40",
+                    "50",
+                    "60",
+                };
+
+                string[] bl =
+                {
+                    "Kniga11",
+                    "Kniga12",
+                    "Kniga13",
+                    "Kniga14",
+                    "Kniga15",
+                    "Kniga16",
+                };
+
+                string[] bl_c =
+                {
+                    "100",
+                    "200",
+                    "300",
+                    "400",
+                    "500",
+                    "600",
+                };
+
+                string[] sf =
+                {
+                    "Kniga111",
+                    "Kniga112",
+                    "Kniga113",
+                    "Kniga114",
+                    "Kniga115",
+                    "Kniga116",
+                };
+
+                string[] sf_c =
+                {
+                    "1000",
+                    "2000",
+                    "3000",
+                    "4000",
+                    "5000",
+                    "6000",
+                };
+
+                switch (Convert.ToInt32(Request.QueryString.Get("catid")))
+                {
+                    case 0:
+                        naslovi.DataSource = sl;
+                        ceni.DataSource = sl_c;
+                        break;
+                    case 1:
+                        naslovi.DataSource = bl;
+                        ceni.DataSource = bl_c;
+                        break;
+                    case 2:
+                        naslovi.DataSource = sf;
+                        ceni.DataSource = sf_c;
+                        break;
+                }
+
+                naslovi.DataBind();
+                ceni.DataBind();
+            }
+        }
+
+        protected void naslovi_selectedIndexChange(object sender, EventArgs e)
+        {
+            if (ViewState["total"] == null)
+            {
+                ViewState["total"] = 1;
+            }
+            else
+            {
+                ViewState["total"] = Convert.ToInt32(ViewState["total"]) +1;
+            }
+            total.Text = ViewState["total"].ToString();
+
+
+            ceni.SelectedIndex = naslovi.SelectedIndex;
+
+        }
+
+        protected void dodadi_Click(object sender, EventArgs e)
+        {
+            ArrayList list;
+            if(Session["cart"] == null)
+            {
+                list = new ArrayList();
+            }
+            else
+            {
+                list = (ArrayList)Session["cart"];
+            }
+
+            list.Add(new ListItem(naslovi.SelectedItem.Text, ceni.SelectedItem.Text));
+            korpa.DataTextField = "Text";
+            korpa.DataValueField = "Value";
+
+            korpa.DataSource = list;    
+            korpa.DataBind();
+
+            Session["cart"] = list;
+
+           
+        }
+
+        protected void kupi_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Plakjanje.aspx");
+        }
+    }
+}

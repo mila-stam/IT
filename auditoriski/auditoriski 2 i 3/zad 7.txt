@@ -1,0 +1,32 @@
+.ASPX
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container">
+        <%--<div class="row m-4">
+            <asp:Image ID="img" runat="server" ImageUrl="~/sample.jpg" />
+        </div>--%>
+
+        <div class="row m-4">
+            <asp:ImageButton ID="sampleImg" runat="server" ImageUrl="~/sample.jpg" OnClick="sampleImg_Click" />
+        </div>
+
+        <div class="row m-4">
+            <asp:Label ID="label" runat="server" Text="Label"></asp:Label>
+        </div>
+    </div>
+</asp:Content>
+
+
+.ASPX.CS
+public partial class zad_7 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void sampleImg_Click(object sender, ImageClickEventArgs e)
+    {
+        label.Text = "x: " + e.X + ", y: " + e.Y;
+
+    }
+}

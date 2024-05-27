@@ -1,0 +1,52 @@
+.ASPX
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container" style="margin: 20px;">
+        <div class="row">
+            <div class="col-md-3">
+                <asp:TextBox ID="phone" runat="server" Style="width: 100%"></asp:TextBox>
+            </div>
+            <div class="col-md-9 text-left">
+                <asp:RequiredFieldValidator
+                    class="text-danger"
+                    ID="phoneValidator"
+                    runat="server"
+                    ErrorMessage="Required Field"
+                    ControlToValidate="phone">
+
+                </asp:RequiredFieldValidator>
+
+                <asp:RegularExpressionValidator
+                    class="text-danger"
+                    ID="RegularExpressionValidator" 
+                    runat="server" 
+                    ErrorMessage="Invalid phone number"
+                    
+                    ValidationExpression="\+389 7[125780] \d{3} \d{3}" ControlToValidate="phone">
+
+                </asp:RegularExpressionValidator>
+            </div>
+        </div>
+
+        <div class="row" style="margin-left: 0px; margin-top: 10px;">
+            <asp:Button ID="button" runat="server" Text="submit" OnClick="btn_click" />
+        </div>
+
+        <div class="row" style="margin-left: 0px; margin-top: 10px;">
+            <asp:Label ID="label" runat="server" Text=""></asp:Label>
+        </div>
+    </div>
+</asp:Content>
+
+.ASPX.CS
+public partial class zad4 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btn_click(object sender, EventArgs e)
+    {
+        label.Text = "Success";
+    }
+}

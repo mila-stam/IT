@@ -1,0 +1,72 @@
+ASPX:
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container">
+        <div class="row text-center">
+            <div class="m-3">
+                Ime
+                <asp:TextBox ID="name" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator
+                    class="text-danger"
+                    ID="RequiredFieldName"
+                    runat="server"
+                    ErrorMessage="Vnesete ime"
+                    ControlToValidate="name">
+
+                </asp:RequiredFieldValidator>
+            </div>
+
+            <div class="m-3">
+                Lozinka
+                <asp:TextBox ID="password" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator
+                    class="text-danger"
+                    ID="RequiredFieldPassword"
+                    runat="server"
+                    ErrorMessage="Vnesete lozinka"
+                    ControlToValidate="password">
+
+                </asp:RequiredFieldValidator>
+            </div>
+
+            <div class="m-3">
+                e-adresa
+                <asp:TextBox ID="email" runat="server"></asp:TextBox>
+                <asp:RegularExpressionValidator
+                    class="text-danger"
+                    ID="RegularExpressionEmail"
+                    runat="server"
+                    ErrorMessage="Nevaliden format"
+                    ControlToValidate="email"
+                    ValidationExpression="\S+@\w+.\w+">
+
+                </asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator
+                    class="text-danger"
+                    ID="RequiredFieldEmail"
+                    runat="server"
+                    ErrorMessage="Vnesete email"
+                    ControlToValidate="email">
+
+                </asp:RequiredFieldValidator>
+            </div>
+
+            <div>
+                <asp:Button ID="logIn" runat="server" Text="Najavete se" OnClick="logIn_click" />
+            </div>
+        </div>
+    </div>
+</asp:Content>
+
+ASPX.CS:
+public partial class Najava : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void logIn_click(object sender, EventArgs e)
+    {
+        Response.Redirect("Glasaj.aspx");
+    }
+}

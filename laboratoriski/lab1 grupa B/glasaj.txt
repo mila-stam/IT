@@ -1,0 +1,96 @@
+ASPX:
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container">
+        <div class="row text-center">
+            <div class="m-3">
+                <asp:Image ID="img" runat="server" ImageUrl="~/finki logo.jpg" />
+            </div>
+
+            <div class="m-3">
+                <asp:Label ID="lblProfesor" runat="server" Text=" "></asp:Label>
+            </div>
+
+            <div class="m-3">
+                <asp:ListBox ID="lbPredmeti" runat="server" OnSelectedIndexChanged="lbPredmeti_selected" AutoPostBack="True"></asp:ListBox>
+                <asp:ListBox ID="lbKrediti" runat="server"></asp:ListBox>
+            </div>
+
+            <div class="m-3">
+                <asp:Button ID="vote" runat="server" Text="Glasaj" />
+            </div>
+
+            <hr />
+
+            <div class="m-3">
+                Predmet:
+                <asp:TextBox ID="predmet" runat="server"></asp:TextBox>
+            </div>
+            <div class="m-3">
+                Krediti:
+                <asp:TextBox ID="krediti" runat="server"></asp:TextBox>
+            </div>
+
+            <div>
+                <asp:Button ID="dodadi" runat="server" Text="Dodadi" OnClick="dodadi_click" />
+                <asp:Button ID="izbrishi" runat="server" Text="Izbrishi" OnClick="izbrishi_click" />
+            </div>
+
+        </div>
+    </div>
+</asp:Content>
+
+ASPX.CS:
+    public partial class Glasaj : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                lbPredmeti.Items.Add(new ListItem("Internet tehnologii", "Goce"));
+                lbPredmeti.Items.Add(new ListItem("Internet", "Goce1"));
+                lbPredmeti.Items.Add(new ListItem("Digitalna elektornika", "Goce2"));
+
+                lbKrediti.Items.Add("6");
+                lbKrediti.Items.Add("5.5");
+                lbKrediti.Items.Add("4");
+            }
+
+        }
+
+        protected void lbPredmeti_selected(object sender, EventArgs e)
+        {
+            int selectedIndex = lbPredmeti.SelectedIndex;
+            if(selectedIndex >= 0 && selectedIndex < lbPredmeti.Items.Count)
+            {
+                lbKrediti.SelectedIndex = selectedIndex;
+            }
+            else
+            {
+                lbKrediti.SelectedIndex = -1;
+            }
+            lblProfesor.Text = lbPredmeti.SelectedValue;
+        }
+
+        protected void dodadi_click(object sender, EventArgs e)
+        {
+            var subject = predmet.Text;
+            var credits = krediti.Text;
+
+            lbPredmeti.Items.Add(subject);
+            lbKrediti.Items.Add(credits);
+        }
+
+        protected void izbrishi_click(object sender, EventArgs e)
+        {
+            int selectedIndex = lbPredmeti.SelectedIndex;
+
+            if (selectedIndex != -1 && selectedIndex < lbKrediti.Items.Count) {
+                lbPredmeti.Items.RemoveAt(selectedIndex);
+                lbKrediti.Items.RemoveAt(selectedIndex);
+
+                lbPredmeti.SelectedIndex = -1;
+                lblProfesor.Text = " ";
+            }
+        }
+    }
+}

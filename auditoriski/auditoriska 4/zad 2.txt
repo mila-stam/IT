@@ -1,0 +1,48 @@
+.ASPX
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container" style="margin: 20px;">
+
+        <div class="row">
+            <div class="col-md-3">
+                <asp:DropDownList ID="cities" runat="server">
+                    <asp:ListItem>(city)</asp:ListItem>
+                    <asp:ListItem>Skopje</asp:ListItem>
+                    <asp:ListItem>Veles</asp:ListItem>
+                    <asp:ListItem>Ohrid</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+            <div class="col-md-9 text-left">
+                <asp:RequiredFieldValidator
+                    ID="RequiredFieldCities"
+                    ControlToValidate="cities"
+                    runat="server"
+                    ErrorMessage="Choose a city"
+                    InitialValue="city">
+                </asp:RequiredFieldValidator>
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-left: 0px; margin-top: 10px;">
+            <asp:Button ID="submit" runat="server" Text="submit" OnClick="submit_click" />
+        </div>
+
+        <div class="row" style="margin-left: 0px; margin-top: 10px;">
+            <asp:Label ID="selected" runat="server" Text="The selected cities are:"></asp:Label>
+        </div>
+    </div>
+</asp:Content>
+
+.ASPX.CS
+public partial class zad2 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void submit_click(object sender, EventArgs e)
+    {
+        selected.Text += " " + cities.SelectedValue;
+    }
+}

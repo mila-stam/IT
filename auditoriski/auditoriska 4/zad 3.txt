@@ -1,0 +1,97 @@
+.ASPX
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="container" style="margin: 20px;">
+        <div class="row">
+            <div class="col-md-3">
+                <asp:TextBox ID="nameSubject" runat="server" Style="width: 100%"></asp:TextBox>
+            </div>
+            <div class="col-md-9 text-left">
+                <asp:RequiredFieldValidator
+                    class="text-danger"
+                    ID="subjectValidator"
+                    runat="server"
+                    ErrorMessage="Required Field"
+                    ControlToValidate="nameSubject">
+
+                </asp:RequiredFieldValidator>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-3">
+                <asp:TextBox ID="grade" runat="server" Style="width: 100%"></asp:TextBox>
+            </div>
+            <div class="col-md-9 text-left">
+
+                <asp:RequiredFieldValidator
+                    class="text-danger"
+                    ID="gradeValidator"
+                    runat="server"
+                    ErrorMessage="Required Field"
+                    ControlToValidate="grade">
+
+                </asp:RequiredFieldValidator>
+
+                <asp:RangeValidator
+                    class="text-danger"
+                    ID="gradeRangeValidator"
+                    runat="server"
+                    ErrorMessage="The allowed grades are from 5 to 10"
+                    MaximumValue="10" MinimumValue="5"
+                    Type="Integer"
+                    ControlToValidate="grade">
+
+                </asp:RangeValidator>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-3">
+                <asp:TextBox ID="date" runat="server" Style="width: 100%"></asp:TextBox>
+            </div>
+            <div class="col-md-9 text-left">
+                <asp:RequiredFieldValidator
+                    class="text-danger"
+                    ID="dateValidator"
+                    runat="server"
+                    ErrorMessage="Required Field"
+                    ControlToValidate="date">
+
+                </asp:RequiredFieldValidator>
+
+                <asp:CompareValidator 
+                    ID="dateComparator" 
+                    runat="server" 
+                    ErrorMessage="Invalid Date" 
+                    ControlToValidate="date"
+                    ValueToCompare="2024-3-17" 
+                    Operator="LessThanEqual">
+
+                </asp:CompareValidator>
+            </div>
+        </div>
+
+        <div class="row" style="margin-left: 0px; margin-top: 10px;">
+            <asp:Button ID="button" runat="server" Text="check" OnClick="button_click" />
+        </div>
+
+        <div class="row" style="margin-left: 0px; margin-top: 10px;">
+            <asp:Label CssClass=" text-success " ID="label" runat="server" Text=""></asp:Label>
+        </div>
+    </div>
+
+</asp:Content>
+
+.ASPX.CS
+public partial class zad3 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void button_click(object sender, EventArgs e)
+    {
+        label.Text = "Success!";
+    }
+}
