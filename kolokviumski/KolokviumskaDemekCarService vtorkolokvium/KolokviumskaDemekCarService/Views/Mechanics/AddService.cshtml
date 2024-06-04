@@ -1,0 +1,15 @@
+﻿@model KolokviumskaDemekCarService.Models.ServiceToMechanic
+@{
+    ViewBag.Title = "AddService";
+}
+
+<h2>Add Service to @Model.Mechanic.Name</h2>
+
+@using (Html.BeginForm("AddService", "Mechanics"))
+{
+    <div>
+        @Html.DropDownListFor(m => m.SelectedServiceId, new SelectList(Model.services, "Id", "Name"));
+        @Html.HiddenFor(m => m.MechanicId)
+    </div>
+    <button type="submit">Save</button>
+}

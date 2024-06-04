@@ -1,0 +1,17 @@
+﻿@model KolokviumskaDemek1.Models.BookToAuthor
+@{
+    ViewBag.Title = "AddNewBook";
+}
+
+<h2>Add New Book to @Model.Author.Name @Model.Author.Surname</h2>
+
+@using (Html.BeginForm("AddTheBook", "Authors"))
+{
+    <div>
+        @Html.DropDownListFor(m => m.SelectedBookId, new SelectList(Model.AllBooks, "Id", "Title"))
+    </div>
+
+    @Html.HiddenFor(m => m.AuthorId)
+    <button type="submit">Save</button>
+}
+

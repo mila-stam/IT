@@ -1,0 +1,15 @@
+﻿@model KolokviumskaDemekCarService.Models.RoleModel
+@{
+    ViewBag.Title = "AddUserToRole";
+}
+
+<h2>Add User To Role</h2>
+
+@using (Html.BeginForm("AddUserToRole", "Account"))
+{
+    <div>
+        @Html.TextBoxFor(m => m.Email)
+        @Html.DropDownListFor(m => m.SelectedRoles, new SelectList(Model.Roles))
+    </div>
+    <button type="submit">Add</button>
+}

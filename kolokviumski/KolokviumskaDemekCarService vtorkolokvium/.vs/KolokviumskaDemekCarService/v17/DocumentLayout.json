@@ -1,0 +1,236 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\kolokviumskademekcarservice\\views\\services\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|solutionrelative:kolokviumskademekcarservice\\views\\services\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\kolokviumskademekcarservice\\controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|solutionrelative:kolokviumskademekcarservice\\controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\kolokviumskademekcarservice\\controllers\\carscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|solutionrelative:kolokviumskademekcarservice\\controllers\\carscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|c:\\users\\mila\\desktop\\kolokviumskademekcarservice\\kolokviumskademekcarservice\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|solutionrelative:kolokviumskademekcarservice\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\kolokviumskademekcarservice\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|solutionrelative:kolokviumskademekcarservice\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\kolokviumskademekcarservice\\views\\account\\addusertorole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|solutionrelative:kolokviumskademekcarservice\\views\\account\\addusertorole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\kolokviumskademekcarservice\\models\\manageviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|solutionrelative:kolokviumskademekcarservice\\models\\manageviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\kolokviumskademekcarservice\\controllers\\servicesapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|solutionrelative:kolokviumskademekcarservice\\controllers\\servicesapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\kolokviumskademekcarservice\\controllers\\mechanicscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|solutionrelative:kolokviumskademekcarservice\\controllers\\mechanicscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\kolokviumskademekcarservice\\views\\mechanics\\addservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|solutionrelative:kolokviumskademekcarservice\\views\\mechanics\\addservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\kolokviumskademekcarservice\\models\\mechanic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|solutionrelative:kolokviumskademekcarservice\\models\\mechanic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\kolokviumskademekcarservice\\models\\identitymodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|solutionrelative:kolokviumskademekcarservice\\models\\identitymodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\kolokviumskademekcarservice\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{784BFC3B-4006-4BD6-87C4-66F076FC9934}|KolokviumskaDemekCarService\\KolokviumskaDemekCarService.csproj|solutionrelative:kolokviumskademekcarservice\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 237,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ServicesApiController.cs",
+              "DocumentMoniker": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Controllers\\ServicesApiController.cs",
+              "RelativeDocumentMoniker": "KolokviumskaDemekCarService\\Controllers\\ServicesApiController.cs",
+              "ToolTip": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Controllers\\ServicesApiController.cs",
+              "RelativeToolTip": "KolokviumskaDemekCarService\\Controllers\\ServicesApiController.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAkwCUAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T18:53:08.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Views\\Services\\Index.cshtml",
+              "RelativeDocumentMoniker": "KolokviumskaDemekCarService\\Views\\Services\\Index.cshtml",
+              "ToolTip": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Views\\Services\\Index.cshtml",
+              "RelativeToolTip": "KolokviumskaDemekCarService\\Views\\Services\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T18:20:35.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddService.cshtml",
+              "DocumentMoniker": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Views\\Mechanics\\AddService.cshtml",
+              "RelativeDocumentMoniker": "KolokviumskaDemekCarService\\Views\\Mechanics\\AddService.cshtml",
+              "ToolTip": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Views\\Mechanics\\AddService.cshtml",
+              "RelativeToolTip": "KolokviumskaDemekCarService\\Views\\Mechanics\\AddService.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T17:55:21.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MechanicsController.cs",
+              "DocumentMoniker": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Controllers\\MechanicsController.cs",
+              "RelativeDocumentMoniker": "KolokviumskaDemekCarService\\Controllers\\MechanicsController.cs",
+              "ToolTip": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Controllers\\MechanicsController.cs",
+              "RelativeToolTip": "KolokviumskaDemekCarService\\Controllers\\MechanicsController.cs",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAvwH0AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T17:16:29.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ServicesController.cs",
+              "DocumentMoniker": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Controllers\\ServicesController.cs",
+              "RelativeDocumentMoniker": "KolokviumskaDemekCarService\\Controllers\\ServicesController.cs",
+              "ToolTip": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Controllers\\ServicesController.cs",
+              "RelativeToolTip": "KolokviumskaDemekCarService\\Controllers\\ServicesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T17:16:02.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CarsController.cs",
+              "DocumentMoniker": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Controllers\\CarsController.cs",
+              "RelativeDocumentMoniker": "KolokviumskaDemekCarService\\Controllers\\CarsController.cs",
+              "ToolTip": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Controllers\\CarsController.cs",
+              "RelativeToolTip": "KolokviumskaDemekCarService\\Controllers\\CarsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T17:15:00.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IdentityModels.cs",
+              "DocumentMoniker": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Models\\IdentityModels.cs",
+              "RelativeDocumentMoniker": "KolokviumskaDemekCarService\\Models\\IdentityModels.cs",
+              "ToolTip": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Models\\IdentityModels.cs",
+              "RelativeToolTip": "KolokviumskaDemekCarService\\Models\\IdentityModels.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABoAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T17:09:25.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Mechanic.cs",
+              "DocumentMoniker": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Models\\Mechanic.cs",
+              "RelativeDocumentMoniker": "KolokviumskaDemekCarService\\Models\\Mechanic.cs",
+              "ToolTip": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Models\\Mechanic.cs",
+              "RelativeToolTip": "KolokviumskaDemekCarService\\Models\\Mechanic.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T16:41:01.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Car.cs",
+              "DocumentMoniker": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Models\\Car.cs",
+              "RelativeDocumentMoniker": "KolokviumskaDemekCarService\\Models\\Car.cs",
+              "ToolTip": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Models\\Car.cs",
+              "RelativeToolTip": "KolokviumskaDemekCarService\\Models\\Car.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T16:39:43.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "KolokviumskaDemekCarService\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "KolokviumskaDemekCarService\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAAADcAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T20:17:14.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ManageViewModels.cs",
+              "DocumentMoniker": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Models\\ManageViewModels.cs",
+              "RelativeDocumentMoniker": "KolokviumskaDemekCarService\\Models\\ManageViewModels.cs",
+              "ToolTip": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Models\\ManageViewModels.cs",
+              "RelativeToolTip": "KolokviumskaDemekCarService\\Models\\ManageViewModels.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAADwv2kAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T20:20:26.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddUserToRole.cshtml",
+              "DocumentMoniker": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Views\\Account\\AddUserToRole.cshtml",
+              "RelativeDocumentMoniker": "KolokviumskaDemekCarService\\Views\\Account\\AddUserToRole.cshtml",
+              "ToolTip": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Views\\Account\\AddUserToRole.cshtml",
+              "RelativeToolTip": "KolokviumskaDemekCarService\\Views\\Account\\AddUserToRole.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-02T21:11:16.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Service.cs",
+              "DocumentMoniker": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Models\\Service.cs",
+              "RelativeDocumentMoniker": "KolokviumskaDemekCarService\\Models\\Service.cs",
+              "ToolTip": "C:\\Users\\MILA\\Desktop\\KolokviumskaDemekCarService\\KolokviumskaDemekCarService\\Models\\Service.cs",
+              "RelativeToolTip": "KolokviumskaDemekCarService\\Models\\Service.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T16:40:34.79Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

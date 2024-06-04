@@ -1,0 +1,48 @@
+﻿@model KolokviumskaDemek1.Models.Author
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Author</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+    </dl>
+</div>
+
+<div>
+    <ul>
+        @foreach(var item in Model.ReleasedBooks)
+            {
+                <li>
+                    @Html.ActionLink(item.Title, "Details", "Books", new { id = item.Id }, null);
+                </li>
+            }
+    </ul>
+</div>
+<div>
+    @Html.ActionLink("Add new book", "AddNewBook", new {id = Model.Id})
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
